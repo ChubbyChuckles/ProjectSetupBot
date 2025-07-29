@@ -23,7 +23,7 @@ def main() -> None:
     # Prompt for project name and GitHub URL
     project_name: str = input("Enter the new project name: ").strip()
     github_url: str = input(
-        "Enter the new GitHub repository URL (e.g., https://github.com/username/repo.git): "
+        "Enter the new GitHub repository URL (e.g., " "https://github.com/username/repo.git): "
     ).strip()
 
     # Validate inputs
@@ -71,7 +71,8 @@ def main() -> None:
             )
         print(f"Created {env_file_path} with default configuration")
 
-    # Step 4: Update project name in key files (optional, e.g., README.md, conf.py)
+    # Step 4: Update project name in key files (optional, e.g., README.md,
+    # conf.py)
     if os.path.exists("README.md"):
         with open("README.md", "r") as f:
             readme_content: str = f.read()
@@ -105,7 +106,7 @@ def main() -> None:
             f'Homepage = "{github_url}"',
         )
         pyproject_content = pyproject_content.replace(
-            'authors = [{name = "ChubbyChuckles", email = "christian.rickert.1989@gmail.com"}]',
+            'authors = [{name = "ChubbyChuckles", email = ' '"christian.rickert.1989@gmail.com"}]',
             f'authors = [{{name = "{getpass.getuser()}", email = ""}}]',
         )
         with open("pyproject.toml", "w") as f:
@@ -115,7 +116,8 @@ def main() -> None:
     if os.path.exists("LICENSE"):
         with open("LICENSE", "r") as f:
             license_content: str = f.read()
-        license_content = license_content.replace("ChubbyChuckles", getpass.getuser())
+        username = getpass.getuser()
+        license_content = license_content.replace("ChubbyChuckles", username)
         with open("LICENSE", "w") as f:
             f.write(license_content)
         print("Updated copyright holder in LICENSE")
@@ -141,7 +143,9 @@ def main() -> None:
     if sys.platform == "win32":
         run_command("powershell -File scripts\\commit-push.ps1")
     else:
-        print("Error: commit-push.ps1 is Windows-specific. Please adapt for non-Windows systems.")
+        print(
+            "Error: commit-push.ps1 is Windows-specific. " "Please adapt for non-Windows systems."
+        )
         sys.exit(1)
 
 
