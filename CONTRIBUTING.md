@@ -1,6 +1,6 @@
-# Contributing to Project-Template
+# Contributing to ProjectSetupBot
 
-Thank you for considering contributing to the Categorical-Trading project, a Python template repository designed to streamline project setup with automated linting, testing, and documentation. We value contributions that enhance functionality, improve code quality, or expand documentation. This guide outlines the steps to contribute effectively and maintain the project's high standards.
+Thank you for considering contributing to the ProjectSetupBot project, a Python template repository designed to streamline project setup with automated linting, testing, and documentation. We value contributions that enhance functionality, improve code quality, or expand documentation. This guide outlines the steps to contribute effectively and maintain the project's high standards.
 
 ## Contribution Workflow
 
@@ -9,8 +9,8 @@ Thank you for considering contributing to the Categorical-Trading project, a Pyt
    - Fork the repository on GitHub to your account.
    - Clone your fork locally:
      ```bash
-     git clone https://github.com/<your-username>/Categorical-Trading.git
-     cd Categorical-Trading
+     git clone https://github.com/<your-username>/ProjectSetupBot.git
+     cd ProjectSetupBot
      ```
    - Create a feature branch from the `develop` branch:
      ```bash
